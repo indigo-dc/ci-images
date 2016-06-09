@@ -17,4 +17,7 @@ RUN update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
 
 WORKDIR /tmp
 RUN git clone https://github.com/indigo-dc/indigoclient.git
-mvn install -DskipTests
+WORKDIR /tmp/indigoclient
+RUN mvn install -DskipTests
+
+WORKDIR /root
