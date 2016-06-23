@@ -4,17 +4,16 @@ MAINTAINER Pablo Orviz <orviz@ifca.unican.es>
 USER root
 
 RUN apt-get update
-RUN apt-get -y install git make curl jq
+# git for cloning the sources
+# make for building
+# curl and jq are needed by the tts-client
+# wget is used to fetch the erlang sources
+# the TTS plugins are written in python
+RUN apt-get -y install git make curl jq wget python
 
 # erlang v18
 COPY build-erlang.sh /tmp/build-erlang.sh
 RUN bash -x /tmp/build-erlang.sh 18.3
-
-## elvis
-RUN git clone https://github.com/inaka/elvis /tmp/elvis
-WORKDIR /tmp/elvis
-RUN make && make install
-RUN wget https://raw.githubusercontent.com/inaka/erlang_guidelines/master/elvis.config -O /etc/elvis.config
 
 # rebar
 RUN git clone https://github.com/rebar/rebar.git /tmp/rebar
