@@ -31,9 +31,6 @@ apt-get -y install libssh-dev
 # ODBC support (libltdl3-dev odbcinst1debian2 unixodbc)
 apt-get -y install unixodbc-dev
 
-# wget to download the source 
-apt-get -y install wget 
-
 mkdir -p ~/code/erlang
 cd ~/code/erlang
  
