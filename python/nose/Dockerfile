@@ -11,3 +11,6 @@ RUN pip install ply PyYAML cpyutils # clues
 RUN pip install -egit+https://github.com/indigo-dc/tosca-parser@master#egg=tosca-parser netaddr requests backports.ssl_match_hostname # im
 RUN wget https://raw.githubusercontent.com/openstack-infra/project-config/master/jenkins/scripts/run-pep8.sh -O /usr/bin/run-pep8.sh
 RUN chmod +x /usr/bin/run-pep8.sh
+
+# clues
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y install htcondor
