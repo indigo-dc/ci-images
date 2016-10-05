@@ -14,3 +14,5 @@ WORKDIR /tmp/sloccount-2.26
 RUN sed -i 's/^CC=.*/CC=gcc -Wall -c/g' makefile
 RUN make
 RUN make install
+
+RUN apt-get -y install cloc
