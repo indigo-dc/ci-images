@@ -36,6 +36,6 @@ WORKDIR /tmp
 RUN wget https://storage.googleapis.com/golang/go1.5.linux-amd64.tar.gz
 RUN tar -C /usr/local -xvf go1.5.linux-amd64.tar.gz
 RUN echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.bashrc
-RUN echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
+RUN echo "PATH=$PATH:/usr/local/go/bin" >> /etc/environment
 
 WORKDIR /root
