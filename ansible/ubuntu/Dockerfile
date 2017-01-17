@@ -5,7 +5,7 @@ USER root
 
 RUN apt-get clean
 RUN apt-get update
-RUN apt-get -y install git python-pip python-apt
+RUN apt-get -y install git python-pip python-apt python-dev
 
 RUN sed -i '/Defaults *requiretty/s/^/#/' /etc/sudoers
 RUN sed -i '/root\tALL=/a jenkins ALL=(ALL) NOPASSWD: ALL' /etc/sudoers
