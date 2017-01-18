@@ -8,4 +8,4 @@ RUN rm -rf /usr/lib64/python2.7/site-packages/pycrypto-2.6.1-py2.7.egg-info
 RUN yum -y install git python-pip python-dev
 
 RUN pip install ansible==2.1
-RUN pip uninstall requests
+RUN pip uninstall -y requests
