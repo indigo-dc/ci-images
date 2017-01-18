@@ -11,4 +11,5 @@ RUN apt-get -y install libffi-dev libssl-dev libyaml-dev
 RUN sed -i '/Defaults *requiretty/s/^/#/' /etc/sudoers
 RUN sed -i '/root\tALL=/a jenkins ALL=(ALL) NOPASSWD: ALL' /etc/sudoers
 
+RUN pip install setuptools==11.3
 RUN pip install ansible==2.1
