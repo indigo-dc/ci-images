@@ -3,6 +3,8 @@ MAINTAINER Pablo Orviz <orviz@ifca.unican.es>
 
 USER root
 
+RUN echo "jenkins ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
+
 RUN apt-get clean
 RUN apt-get update
 RUN apt-get -y install wget git python python-dev python-pip libcurl4-gnutls-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev
