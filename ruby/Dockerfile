@@ -17,3 +17,4 @@ RUN gem install nokogiri -v '1.6.7.2'
 RUN gem install bundle
 
 RUN apt-get -y install g++
+RUN echo "jenkins ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
