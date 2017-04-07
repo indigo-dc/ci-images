@@ -15,3 +15,6 @@ RUN gem install rubocop
 RUN gem install json -v '1.8.3'
 RUN gem install nokogiri -v '1.6.7.2'
 RUN gem install bundle
+
+RUN apt-get -y install g++
+RUN echo "jenkins ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
