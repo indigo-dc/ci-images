@@ -11,6 +11,6 @@ RUN apt-get -y install wget git python python-dev python-pip libcurl4-gnutls-dev
 RUN apt-get -y install libmysqlclient-dev libsqlite3-dev
 RUN apt-get -y install curl
 RUN pip install tox flake8 pylint pydocstyle
-RUN pip install pep8
+RUN pip install pep8 bandit
 RUN wget https://raw.githubusercontent.com/openstack-infra/project-config/master/jenkins/scripts/run-pep8.sh -O /usr/bin/run-pep8.sh
 RUN chmod +x /usr/bin/run-pep8.sh
