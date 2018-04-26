@@ -1,4 +1,5 @@
 FROM indigodatacloud/ci-images:base
+MAINTAINER Pablo Orviz <orviz@ifca.unican.es>
 
 RUN apt-get update \
     && apt-get install --no-install-recommends -y wget \
@@ -19,5 +20,3 @@ EXPOSE 22
 
 # Default command
 CMD ["/usr/sbin/sshd", "-D"]
-
-
