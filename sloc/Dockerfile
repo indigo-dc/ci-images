@@ -6,7 +6,8 @@ RUN apt-get update \
                                                   git \
                                                   make \
                                                   gcc \
-                                                  flex
+                                                  flex \
+						  libc6-dev
 
 WORKDIR /tmp
 RUN wget http://www.dwheeler.com/sloccount/sloccount-2.26.tar.gz
