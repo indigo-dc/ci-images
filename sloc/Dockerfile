@@ -1,11 +1,12 @@
-FROM evarga/jenkins-slave
+FROM indigodatacloud/ci-images:base
 MAINTAINER Pablo Orviz <orviz@ifca.unican.es>
 
-USER root
-
-RUN apt-get clean
-RUN apt-get update
-RUN apt-get -y install git wget make gcc flex
+RUN apt-get update \
+    && apt-get install --no-install-recommends -y wget \
+                                                  git \
+                                                  make \
+                                                  gcc \
+                                                  flex
 
 WORKDIR /tmp
 RUN wget http://www.dwheeler.com/sloccount/sloccount-2.26.tar.gz
