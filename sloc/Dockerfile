@@ -18,3 +18,12 @@ RUN make
 RUN make install
 
 RUN apt-get -y install cloc
+
+WORKDIR /root
+
+# Standard SSH port
+EXPOSE 22
+
+# Default command
+CMD ["/usr/sbin/sshd", "-D"]
+
