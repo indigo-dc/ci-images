@@ -16,3 +16,9 @@ RUN make compile
 RUN cp covertool /usr/bin/covertool
 
 WORKDIR /root
+
+# Standard SSH port
+EXPOSE 22
+
+# Default command
+CMD ["/usr/sbin/sshd", "-D"]
