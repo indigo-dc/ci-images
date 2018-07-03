@@ -7,7 +7,8 @@ RUN apt-get update \
                                                   make \
 						  erlang \
 						  rebar \
-						  golang
+						  golang \
+                                                  gcc
 
 # covertool
 RUN git clone https://github.com/idubrov/covertool.git /tmp/covertool
