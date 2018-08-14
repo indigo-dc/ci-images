@@ -16,9 +16,16 @@ RUN apt-get update \
 						  tox flake8 pylint pydocstyle pep8 bandit \
     && rm -rf /var/lib/apt/lists/*
 
-# We need (tox==3.1.2, virtualenv==16.0.0) to avoid failures when executing tox within
-# an absolute path containing whitespaces https://github.com/tox-dev/tox/issues/121
-RUN pip install tox
+# We need:
+#
+# tox>=2.7.0 to avoid errors when not including 'commands' in [testenv] section
+#	https://github.com/tox-dev/tox/issues/454
+# virtualenv>=16.0.0 to avoid failures when executing tox within an absolute path
+#		     containing whitespaces
+#	https://github.com/tox-dev/tox/issues/121
+RUN pip install tox==2.7.0
+# Add tox binary to $PATH
+ENV PATH="${PATH}:/usr/local/bin"
 
 # Standard SSH port
 EXPOSE 22
