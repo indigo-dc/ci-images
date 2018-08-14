@@ -11,6 +11,7 @@ RUN apt-get update \
                                                   libssl-dev \
                                                   libxml2-dev \
                                                   libxslt1-dev \
+						  libgnutls28-dev \
                                                   default-libmysqlclient-dev libsqlite3-dev \
 						  curl \
 						  tox flake8 pylint pydocstyle pep8 bandit \
