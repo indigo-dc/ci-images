@@ -8,7 +8,8 @@ RUN apt-get update \
                                                   wget \
     && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.13/checkstyle-8.13-all.jar -P /var/tmp/checkstyle-8.13-all.jar
+RUN wget https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.13/checkstyle-8.13-all.jar -P /var/tmp/
+RUN wget https://raw.githubusercontent.com/checkstyle/checkstyle/master/src/main/resources/google_checks.xml -P /var/tmp/
 
 # Standard SSH port
 EXPOSE 22
