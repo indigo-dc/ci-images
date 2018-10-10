@@ -5,7 +5,10 @@ RUN apt-get update \
     && apt-get install --no-install-recommends -y git \
                                                   maven \
 						  checkstyle \
+                                                  wget \
     && rm -rf /var/lib/apt/lists/*
+
+RUN wget https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.13/checkstyle-8.13-all.jar -P /var/tmp/checkstyle-8.13-all.jar
 
 # Standard SSH port
 EXPOSE 22
