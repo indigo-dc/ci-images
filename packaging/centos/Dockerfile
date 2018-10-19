@@ -4,6 +4,7 @@ MAINTAINER Pablo Orviz <orviz@ifca.unican.es>
 RUN yum makecache fast \
     && yum install -y findutils \
                       maven \
+                      python-setuptools \
     && yum -y clean all 
 
 # build-environment
