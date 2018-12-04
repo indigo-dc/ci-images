@@ -1,0 +1,25 @@
+FROM indigodatacloud/ci-images:base-c7
+MAINTAINER Pablo Orviz <orviz@ifca.unican.es>
+
+RUN yum makecache fast \
+    && yum install -y findutils \
+                      java-1.8.0-openjdk-devel \
+                      openssh-clients \
+                      httpd-tools \
+                      tcpdump \
+                      wget \
+                      redhat-lsb-core \
+                      unzip \
+                      git\
+    && yum -y clean all 
+
+# dcache maven specific
+RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+RUN yum update
+RUN yum install apache-maven
+
+
+EXPOSE 22 
+
+CMD ["/usr/sbin/sshd", "-D"]
+
