@@ -5,6 +5,8 @@ RUN apt-get update \
     && apt-get install --no-install-recommends -y wget \
                                                   git \
                                                   python python-dev python-pip \
+						  python3-dev \
+						  python-setuptools python-wheel \
 						  build-essential \
                                                   libcurl4-gnutls-dev \
                                                   libffi-dev \
@@ -15,6 +17,7 @@ RUN apt-get update \
                                                   default-libmysqlclient-dev libsqlite3-dev \
 						  curl \
 						  tox flake8 pylint pydocstyle pep8 bandit \
+						  twine \
     && rm -rf /var/lib/apt/lists/*
 
 # We need:
