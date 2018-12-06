@@ -3,6 +3,7 @@ MAINTAINER Pablo Orviz <orviz@ifca.unican.es>
 
 RUN yum makecache fast \
     && yum install -y findutils \
+                      java-1.8.0-openjdk \
                       java-1.8.0-openjdk-devel \
                       openssh-clients \
                       httpd-tools \
