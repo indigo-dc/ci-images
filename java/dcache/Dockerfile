@@ -15,8 +15,7 @@ RUN yum makecache fast \
 
 # dcache maven specific
 RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
-RUN yum update
-RUN yum install apache-maven
+RUN yum -y update && yum install -y apache-maven
 
 
 EXPOSE 22 
