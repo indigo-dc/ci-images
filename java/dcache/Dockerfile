@@ -9,13 +9,12 @@ RUN yum makecache fast \
                       httpd-tools \
                       tcpdump \
                       wget \
+                      which \
                       redhat-lsb-core \
                       unzip \
                       git\
     && yum -y clean all 
     
-ENV JAVA_HOME /usr/bin/java/java-1.8.0-openjdk.x86_64
-RUN export JAVA_HOME
 
 # dcache maven specific
 RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
