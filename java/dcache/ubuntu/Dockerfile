@@ -6,19 +6,19 @@ RUN apt-get update \
                                                   git \
                                                   python-all python-all-dev python-pbr python-support \
                                                   python-pip \
-						                                      python3-dev \
-						                                      python-setuptools python-wheel \
-						                                      devscripts build-essential debhelper \
+						  python3-dev \
+						  python-setuptools python-wheel \
+						  devscripts build-essential debhelper \
                                                   libcurl4-gnutls-dev \
                                                   libffi-dev \
                                                   libssl-dev \
                                                   libxml2-dev \
                                                   libxslt1-dev \
-						                                      libgnutls28-dev \
+						  libgnutls28-dev \
                                                   default-libmysqlclient-dev libsqlite3-dev \
-						                                      curl \
+						  curl \
                                                   wget \
-                                                  maven dpkg-dev software-properties-common
+                                                  maven dpkg-dev software-properties-common \
       && rm -rf /var/lib/apt/lists/*
       
       
