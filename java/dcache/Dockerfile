@@ -9,12 +9,12 @@ RUN yum makecache fast \
                       httpd-tools \
                       tcpdump \
                       wget \
-                      which \
                       redhat-lsb-core \
-                      unzip \
-                      git\
     && yum -y clean all 
-    
+
+# build-environment
+COPY build_env.txt /tmp/ 
+RUN xargs yum -y install < /tmp/build_env.txt    
 
 # dcache maven specific
 RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
