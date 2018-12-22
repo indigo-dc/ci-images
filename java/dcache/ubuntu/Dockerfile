@@ -3,7 +3,7 @@ MAINTAINER Pablo Orviz <orviz@ifca.unican.es>
 
 RUN apt-get update \
     && apt-get install --no-install-recommends -y vim git openjdk-8-jdk build-essential rpm dpkg-dev maven wget \
-       software-properties-common \
+       software-properties-common quilt debhelper\
       && rm -rf /var/lib/apt/lists/*
       
       
