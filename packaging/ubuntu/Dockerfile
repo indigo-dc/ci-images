@@ -5,7 +5,7 @@ USER root
 RUN apt-get update \
     && apt-get install --no-install-recommends -y git \
                                                   maven \
-                                                  make \
+                                                  build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 # Standard SSH port
