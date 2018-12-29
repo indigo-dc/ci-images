@@ -6,7 +6,7 @@ RUN apt-get update \
     && apt-get install --no-install-recommends -y git \
                                                   maven \
                                                   build-essential \
-                                                  devscripts \
+                                                  devscripts fakeroot\
     && rm -rf /var/lib/apt/lists/*
 
 # Standard SSH port
