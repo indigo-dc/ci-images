@@ -3,7 +3,7 @@ FROM indigodatacloud/ci-images:base-u16
 USER root
 
 RUN apt-get update \
-    && apt-get install --no-install-recommends -y git \
+    && apt-get install --no-install-recommends -y git debhelper\
                                                   maven \
                                                   build-essential \
                                                   devscripts fakeroot\
