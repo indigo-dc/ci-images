@@ -13,7 +13,7 @@ RUN apt-get update \
 RUN useradd -m -d /home/jenkins -s /bin/sh jenkins
 RUN mkdir /home/jenkins/.ssh &&\
     chmod 0700 /home/jenkins/.ssh &&\
-    echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDse2yhEHShVq8PiTddtKcsOYuuxHrFJH0mBdPfA5pplGqFfgGC55nA81NCgTIBuKiTKWOp9jgPfDnM/GXvPE+lWqPNJZzgx4hpbDhkFfXjFNryTSVTjQUa3qCSA4DIWrX3uVSkLd52a1li1UH6F/NohYhiE77Y5Jd27W3U6yh6alQhRopH54CuAjb3F8tGRAjz4/65TUkWjdnnr/dX+hgoBkTgo55DFMcSQ7p17lcRULscSY8oEpmi6x4ReKQuXa+79PZD2hbT4CS/A/OpCj3CVpnhuDrvBAIbIiQipknrRnQuW3kD23/oHocadnFJEaV913QuRlmqL8LbjOkmrWm5 jenkins@indigo-jenkins.cern.ch" > /home/jenkins/.ssh/authorized_keys &&\
+    echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC031xiODGimXMUdXNlFcGR5/MqUfRN65Gkwt29gszi9GFraZd300Gbxfknru4VsDpk0ULTg1z0A+pxpWanFTCnYW9cR1LlC7Cpw3L+p9Lu/TsjBJC0OsxHEr6p5frb85ChHJv381Vr1OIWmnDGrdSbbNLM3+UqtVARDDExl4+dQIJzzPFZZMpB2wZqWcR5uftlrat/4Zrew+4fQHNMAbGfUaa5TD94cXFmuFro3lzpbMjfKB0FlIBYtkYXkYqoRI8ujzN02icE4c4CocdBEFt2FbaT/9EtFeAltCxprZt5566f9uJIpJ1FR8DOOdrxnQTkw+r7cLEgh3kBUnIet5JX jenkins@jenkins-indigo" > /home/jenkins/.ssh/authorized_keys &&\
     chown -R jenkins:jenkins /home/jenkins/.ssh
 RUN echo "jenkins ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
 
