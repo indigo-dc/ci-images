@@ -2,7 +2,7 @@ FROM ubuntu:trusty
 MAINTAINER Cristina Duma <aiftim@infn.it>
 
 USER root
-
+RUN add-apt-repository ppa:openjdk-r/ppa
 RUN apt-get update \
     && apt-get install --no-install-recommends -y openssh-server \
                                                   sudo \
