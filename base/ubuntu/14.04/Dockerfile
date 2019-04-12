@@ -2,11 +2,12 @@ FROM ubuntu:trusty
 MAINTAINER Cristina Duma <aiftim@infn.it>
 
 USER root
+RUN apt-get update && apt-get install -y software-properties-common
 RUN add-apt-repository ppa:openjdk-r/ppa
 RUN apt-get update \
     && apt-get install --no-install-recommends -y openssh-server \
                                                   sudo \
-                                                  openjdk-8-jdk \
+                                                  openjdk-8-jdk git \
     && rm -rf /var/lib/apt/lists/*
 
 # Jenkins sshd
