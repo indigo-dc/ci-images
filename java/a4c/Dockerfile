@@ -29,6 +29,11 @@ WORKDIR /root
 RUN cp -r .m2 /home/jenkins/ \
     && chown jenkins:jenkins /home/jenkins/.m2 -R 
 
+RUN npm install -g bower
+RUN npm -g install grunt-cli
+RUN gem install compass
+RUN npm install grunt-contrib-compass --save-dev
+
 # Standard SSH port
 EXPOSE 22
 
