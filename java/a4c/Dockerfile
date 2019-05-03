@@ -19,10 +19,10 @@ RUN npm -g install grunt-cli
 RUN gem install compass
 RUN npm install grunt-contrib-compass --save-dev
 
-RUN git clone https://github.com/indigo-dc/alien4cloud-deep /tmp/alien4cloud-deep
-WORKDIR /tmp/alien4cloud-deep/a4c
+RUN git clone https://github.com/indigo-dc/alien4cloud -b 2.1.0-UPV-1.0.0 /tmp/alien4cloud
+WORKDIR /tmp/alien4cloud/
 RUN echo '{ "allow_root": true }' > /root/.bowerrc
-RUN mvn clean install
+RUN mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true
 
 WORKDIR /root
 # ugly
