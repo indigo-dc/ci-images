@@ -7,6 +7,9 @@ RUN apt-get update \
     && apt-get install --no-install-recommends -y openssh-server sudo \
     && rm -rf /var/lib/apt/lists/*
 
+# openjdk in jenkins user path
+RUN echo "export PATH=$JAVA_HOME/bin:$PATH" >> /etc/profile
+
 # Jenkins sshd
 RUN useradd -m -d /home/jenkins -s /bin/sh jenkins
 RUN mkdir /home/jenkins/.ssh &&\
