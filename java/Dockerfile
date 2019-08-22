@@ -6,6 +6,7 @@ RUN apt-get update \
                                                   maven \
 						  checkstyle \
                                                   wget \
+						  openjdk-8-jdk-headless \
     && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.13/checkstyle-8.13-all.jar -P /var/tmp/
