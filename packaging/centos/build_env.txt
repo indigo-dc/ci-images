@@ -22,3 +22,4 @@ unzip
 util-linux
 which
 xz
+python-setuptools
