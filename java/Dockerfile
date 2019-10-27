@@ -13,7 +13,8 @@ RUN wget https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8
 RUN wget https://raw.githubusercontent.com/checkstyle/checkstyle/master/src/main/resources/google_checks.xml -P /var/tmp/
 
 COPY nexus-settings.xml /tmp/
-RUN mkdir /home/jenkins/.m2 && mv /tmp/nexus-settings.xml /home/jenkins/.m2/settings.xml
+RUN mkdir /home/jenkins/.m2 && mv /tmp/nexus-settings.xml /home/jenkins/.m2/settings.xml &&\
+    chown -R jenkins:jenkins /home/jenkins/.m2
 
 # Standard SSH port
 EXPOSE 22
