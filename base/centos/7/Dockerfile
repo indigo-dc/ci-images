@@ -8,7 +8,7 @@ RUN yum makecache fast \
     && yum -y clean all 
 
 # Jenkins sshd
-RUN useradd -m -d /home/jenkins -s /bin/sh jenkins
+RUN useradd -m -u 1001 -d /home/jenkins -s /bin/sh jenkins
 RUN mkdir /home/jenkins/.ssh &&\
     chmod 0700 /home/jenkins/.ssh &&\
     echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC031xiODGimXMUdXNlFcGR5/MqUfRN65Gkwt29gszi9GFraZd300Gbxfknru4VsDpk0ULTg1z0A+pxpWanFTCnYW9cR1LlC7Cpw3L+p9Lu/TsjBJC0OsxHEr6p5frb85ChHJv381Vr1OIWmnDGrdSbbNLM3+UqtVARDDExl4+dQIJzzPFZZMpB2wZqWcR5uftlrat/4Zrew+4fQHNMAbGfUaa5TD94cXFmuFro3lzpbMjfKB0FlIBYtkYXkYqoRI8ujzN02icE4c4CocdBEFt2FbaT/9EtFeAltCxprZt5566f9uJIpJ1FR8DOOdrxnQTkw+r7cLEgh3kBUnIet5JX jenkins@jenkins-indigo" > /home/jenkins/.ssh/authorized_keys &&\
