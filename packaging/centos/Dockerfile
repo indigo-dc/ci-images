@@ -5,6 +5,7 @@ RUN yum makecache fast \
     && yum install -y findutils \
                       maven \
                       python-setuptools \
+		      epel-release \
     && yum -y clean all 
 
 # build-environment
