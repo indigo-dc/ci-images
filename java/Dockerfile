@@ -7,6 +7,12 @@ RUN apt-get update \
 						  checkstyle \
                                                   wget \
 						  openjdk-8-jdk-headless \
+						  nodejs \
+						  ruby \
+						  ruby-dev \
+						  gcc \
+						  g++ \
+						  make \
     && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.13/checkstyle-8.13-all.jar -P /var/tmp/
