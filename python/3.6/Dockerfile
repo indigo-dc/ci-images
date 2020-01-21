@@ -6,6 +6,7 @@ RUN apt-get update \
                                                   git \
                                                   python3.6 python3-dev python-pip \
 						  python-setuptools python-wheel \
+                                                  python3-wheel python3-pip python3-venv \
 						  build-essential \
                                                   libcurl4-gnutls-dev \
                                                   libffi-dev \
@@ -18,6 +19,9 @@ RUN apt-get update \
 						  tox flake8 pylint pydocstyle pep8 bandit \
 						  twine \
     && rm -rf /var/lib/apt/lists/*
+
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+RUN update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 10
 
 # Standard SSH port
 EXPOSE 22
