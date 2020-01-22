@@ -17,11 +17,13 @@ RUN apt-get update \
                                                   default-libmysqlclient-dev libsqlite3-dev \
 						  curl \
 						  tox flake8 pylint pydocstyle pep8 bandit \
-						  twine \
     && rm -rf /var/lib/apt/lists/*
 
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 RUN update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 10
+# otherwise issues with twine<=1.10.0 
+RUN pip install twine==1.11.0 
+RUN pip install -U wheel setuptools
 
 # Standard SSH port
 EXPOSE 22
