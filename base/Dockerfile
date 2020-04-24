@@ -28,6 +28,12 @@ RUN sed -i /etc/ssh/sshd_config \
         -e 's/#LogLevel.*/LogLevel INFO/'
 RUN mkdir -p /run/sshd
 
+# locales
+RUN apt-get update \
+    && apt-get install --no-install-recommends -y locales \
+    && rm -rf /var/lib/apt/lists/*
+RUN locale-gen en_US.UTF-8 
+
 EXPOSE 22
 
 CMD ["/usr/sbin/sshd", "-D"]

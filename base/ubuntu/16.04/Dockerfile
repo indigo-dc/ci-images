@@ -7,6 +7,7 @@ RUN apt-get update \
     && apt-get install --no-install-recommends -y openssh-server \
                                                   sudo \
                                                   openjdk-8-jdk \
+                                                  language-pack-en \
     && rm -rf /var/lib/apt/lists/*
 
 # Jenkins sshd
@@ -26,6 +27,12 @@ RUN sed -i /etc/ssh/sshd_config \
         -e 's/#SyslogFacility.*/SyslogFacility AUTH/' \
         -e 's/#LogLevel.*/LogLevel INFO/'
 RUN mkdir -p /run/sshd
+
+# locales
+RUN apt-get update \
+    && apt-get install --no-install-recommends -y locales \
+    && rm -rf /var/lib/apt/lists/*
+RUN locale-gen en_US.UTF-8 
 
 EXPOSE 22
 
