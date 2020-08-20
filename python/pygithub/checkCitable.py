@@ -6,10 +6,10 @@ import sys
 def isPathInRepository(repo,path):
     try:
         repo.get_contents(path)
-        print(f"Found {path} in repository")
+        print("Found %s in repository %s"%(path,repo.name))
         return True
     except GithubException:
-        print(f"{path} not found in repository")
+        print("%s not found in repository %s"%(path,repo.name))
         return False  
 
 g = Github()

@@ -4,8 +4,8 @@ LABEL maintainer="davrodgon@users.noreply.github.com"
 
 RUN pip install PyGithub
 
-COPY getRepoLicense.py /usr/local/bin/getRepoLicense.py 
-RUN chmod +x /usr/local/bin/getRepoLicense.py  
+COPY *.py /usr/local/bin/
+RUN chmod +x /usr/local/bin/*.py  
 
 # Standard SSH port
 EXPOSE 22
