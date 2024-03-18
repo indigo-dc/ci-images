@@ -14,6 +14,7 @@ RUN apt-get update \
                                                   libgnutls28-dev \
                                                   default-libmysqlclient-dev libsqlite3-dev \
                                                   curl \
+                                                  python3-netifaces \ 
     && rm -rf /var/lib/apt/lists/*
 
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 11
